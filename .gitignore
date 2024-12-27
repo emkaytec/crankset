@@ -32,5 +32,3 @@ vendor/
 
 # Temporary files
 *.tmp
-
-go.sum
