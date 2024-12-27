@@ -1,11 +1,11 @@
-# My Gin App
+# Crankset
 
 This is a simple web application built using the Gin framework in Go. It demonstrates how to set up a basic RESTful API with routing, controllers, and models.
 
 ## Project Structure
 
 ```
-my-gin-app
+crankset
 ├── src
 │   ├── main.go          # Entry point of the application
 │   ├── controllers      # Contains the controller logic
@@ -22,8 +22,8 @@ my-gin-app
 
 1. **Clone the repository:**
    ```
-   git clone https://github.com/yourusername/my-gin-app.git
-   cd my-gin-app
+   git clone https://github.com/wiscotrashpanda/crankset.git
+   cd crankset
    ```
 
 2. **Install dependencies:**
