@@ -21,9 +21,9 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/wiscotrashpanda/crankset:latest
-          docker build -t ghcr.io/wiscotrashpanda/crankset:${GITHUB_SHA}
-          docker build -t ghcr.io/wiscotrashpanda/crankset:$(git rev-parse --short "$GITHUB_SHA")
+          docker build -t ghcr.io/wiscotrashpanda/crankset:latest \
+                       -t ghcr.io/wiscotrashpanda/crankset:${GITHUB_SHA} \
+                       -t ghcr.io/wiscotrashpanda/crankset:$(git rev-parse --short "$GITHUB_SHA") .
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
