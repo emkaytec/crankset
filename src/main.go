@@ -1,15 +1,14 @@
 package main
 
 import (
-	"my-gin-app/src/routes"
-
+	"emkaytec.io/crankset/src/routes"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	r := gin.Default()
+	server := gin.Default()
 
-	routes.SetupRoutes(r)
+	routes.SetupRoutes(server)
 
-	r.Run(":8080")
+	server.Run(":8080")
 }
