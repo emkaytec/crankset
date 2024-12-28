@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"net"
 	"net/http"
 	"time"
 
@@ -24,4 +25,23 @@ func (c *Controller) PostData(ctx *gin.Context) {
 
 func (c *Controller) HealthCheck(ctx *gin.Context) {
 	ctx.Status(http.StatusOK)
+}
+
+func (c *Controller) GetIPAddress(ctx *gin.Context) {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Unable to get IP address"})
+		return
+	}
+
+	for _, addr := range addrs {
+		if ipNet, ok := addr.(*net.IPNet); ok && !ipNet.IP.IsLoopback() {
+			if ipNet.IP.To4() != nil {
+				ctx.JSON(http.StatusOK, gin.H{"ip_address": ipNet.IP.String()})
+				return
+			}
+		}
+	}
+
+	ctx.JSON(http.StatusInternalServerError, gin.H{"error": "No IP address found"})
 }

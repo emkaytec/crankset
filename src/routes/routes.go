@@ -11,6 +11,7 @@ func SetupRoutes(router *gin.Engine) {
 	router.GET("/", controller.GetIndex)
 	router.POST("/data", controller.PostData)
 
+	router.GET("/ip", controller.GetIPAddress)
 	router.GET("/healthz", controller.HealthCheck)
 	router.GET("/health_check", controller.HealthCheck)
 }
