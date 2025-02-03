@@ -6,6 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: emkaytec/crankset
 spec:
-  type: other
-  lifecycle: unknown
-  owner: wiscotrashpanda
+  type: website
+  system: examples
+  lifecycle: experimental
+  owner: guests
