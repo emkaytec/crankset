@@ -3,7 +3,9 @@ kind: Component
 metadata:
   name: crankset
   description: A thing that does some stuff
+  annotations:
+    github.com/project-slug: emkaytec/crankset
 spec:
-  type: website
-  lifecycle: production
-  owner: guests
+  type: other
+  lifecycle: unknown
+  owner: wiscotrashpanda
