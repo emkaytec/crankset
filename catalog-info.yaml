@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: crankset
+  description: A thing that does some stuff
+spec:
+  type: website
+  lifecycle: production
+  owner: guests
